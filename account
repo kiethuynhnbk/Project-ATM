@@ -1,0 +1,60 @@
+printf("enter amount of cutomers in list:");
+	scanf("%d",&x);
+	printf("enter ID of each cutomers in list:");
+	
+	
+	
+	for(int i=0;i<=x-1;i++)
+	{
+		scanf("%d",&customer[i]);
+		
+	}
+	FILE *fptr;
+	fptr=fopen("C:\\Users\\ASUS\\Desktop\\cus.txt","w+");
+	if(fptr==NULL)
+	{
+		printf("can not open");
+		exit(1);
+	}
+	for(int i=0;i<=x-1;i++)
+	{
+		fprintf(fptr,"%d\n",customer[i]);
+	}
+	fclose(fptr);
+	printf("so tien ban dau trong tai khoan:");
+	scanf("%d",&so_du);
+	fflush(stdin);
+	cout<<"DANG KI TAI KHOAN NGAN HANG\n";
+	cout<<"NHAP TEN DANG NHAP\n";
+	getline(cin, ten);
+	fflush(stdin);
+	cout<<"NHAP MAT KHAU\n";
+	getline(cin, mat_khau);
+	 ofstream myfile;
+    myfile.open ("C:\\Users\\ASUS\\Desktop\\cus.txt");
+    myfile <<ten<<endl;
+    myfile<<mat_khau<<endl;
+    myfile.close();
+while(option!=0)
+{
+	
+fflush(stdin);
+if(option==0)
+return 0;
+
+
+    int k=0;
+	cout << "\t\t\tDANG NHAP TAI KHOAN CUA BAN\n";
+	cout << "\nTen nguoi dung: "; getline(cin, TEN);
+	cout << "Mat khau: "; getline(cin, MAT_KHAU);;
+
+	if (TEN == ten && MAT_KHAU == mat_khau)
+	{
+		system("cls");
+		cout << "\t\t\tDANG NHAP TAI KHOAN CUA BAN\n\n";
+		cout << "Dang kiem tra thong tin...\n";
+		Sleep(1000);
+		cout << "\nDANG NHAP THANH CONG!\a\a\n\n";
+
+first of all, the program requires the number of customer you want to work with,return until you input enough id number of those and insert an initial money. After that, you could sign up the username and password.
+Your username and password will save in a text-file. To sign in to use the services of atm machine, you must enter exactly your username and password to access. If username and password correct the program will show that “success login” and access the service
